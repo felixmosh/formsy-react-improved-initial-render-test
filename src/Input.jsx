@@ -1,6 +1,6 @@
-import { withFormsy as currentWithFormsy } from 'formsy-react';
-import { withFormsy as improvedWithFormsy } from './improved-formsy/formsy-react.umd';
-import React from 'react';
+import { withFormsy as currentWithFormsy } from "formsy-react";
+import { withFormsy as improvedWithFormsy } from "./improved-formsy/formsy-react.cjs.development";
+import React from "react";
 
 class MyInput extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class MyInput extends React.Component {
           name={name}
           onChange={this.changeValue}
           type="text"
-          value={value || ''}
+          value={value || ""}
         />
         {name}
         <span>{errorMessage}</span>
@@ -36,4 +36,6 @@ class MyInput extends React.Component {
   }
 }
 
-export default (window.location.search.includes('improved') ? improvedWithFormsy : currentWithFormsy)(MyInput);
+export default (window.location.search.includes("improved")
+  ? improvedWithFormsy
+  : currentWithFormsy)(MyInput);
